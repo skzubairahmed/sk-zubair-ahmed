@@ -1,29 +1,33 @@
 import Link from "next/link"
 
-export default function Navbar(){
+export default function Navbar({activePage}){
     return(
-        <nav className="conatiner-fluid w-screen flex flex-row flex-wrap p-3 bg-black border-b border-slate-500 items-center justify-between">
-            <Link href="/">
+        <nav className="container-fluid w-screen flex flex-row flex-wrap p-3 bg-black border-b border-slate-500 items-center justify-between">
+            <Link className="relative group" href="/">
                 <h1 className="nav-header terminal-text text-xl font-datatype font-bold-lg antialiased">
                     Sk Zubair Ahmed
                 </h1>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4ade80] transition-all group-hover:w-full" />
             </Link>
             
-            <div className="nav-link-group flex flex-row gap-0">
-                <div className="font-datatype py-1 px-2 w-fit h-full bg-transparent border-y-0 border terminal-text">
+            <div className="nav-link-group flex flex-row gap-6">
+                <div className="relative group font-datatype p-0 w-fit h-full bg-transparent terminal-text">
                     <Link href='/'>
                         Home
                     </Link>
+                    <span className={`absolute -bottom-1 left-0 ${activePage === 'home' ? 'w-full h-0.5 bg-[#4ade80]' : 'w-0 h-0.5 bg-[#4ade80] transition-all group-hover:w-full'}`} />
                 </div>
-                <div className="font-datatype py-1 px-2 w-fit h-full bg-transparent border-y-0 terminal-text border border-l-0">
+                <div className="relative group font-datatype p-0 w-fit h-full bg-transparent terminal-text">
                     <Link href="/projects">
                         Projects
                     </Link>
+                    <span className={`absolute -bottom-1 left-0 ${activePage === 'projects' ? 'w-full h-0.5 bg-[#4ade80]' : 'w-0 h-0.5 bg-[#4ade80] transition-all group-hover:w-full'}`} />
                 </div>
-                <div className="font-datatype py-1 px-2 w-fit h-full bg-transparent border-y-0 terminal-text border border-l-0">
+                <div className="relative group font-datatype p-0 w-fit h-full bg-transparent terminal-text">
                     <Link href="/contact">
                         Contact
                     </Link>
+                    <span className={`absolute -bottom-1 left-0 ${activePage === 'contact' ? 'w-full h-0.5 bg-[#4ade80]' : 'w-0 h-0.5 bg-[#4ade80] transition-all group-hover:w-full'}`} />
                 </div>
             </div>
 
