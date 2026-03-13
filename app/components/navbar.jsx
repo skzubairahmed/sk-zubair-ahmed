@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar({activePage}){
     return(
-        <nav className="container-fluid w-screen flex flex-row flex-wrap p-3 bg-black border-b border-slate-500 items-center justify-between">
+        <nav className="w-screen sticky-top flex flex-row flex-wrap p-3 bg-black border-b border-slate-500 items-center justify-between">
             <Link className="relative group" href="/">
                 <h1 className="nav-header terminal-text text-xl font-datatype font-bold-lg antialiased">
                     Sk Zubair Ahmed
